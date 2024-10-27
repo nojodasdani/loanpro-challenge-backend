@@ -1,0 +1,46 @@
+service: loanpro-challenge-api
+configValidationMode: warn
+
+package:
+  individually: false
+
+custom:
+  defaultStage: dev
+  environment: ${file(env.${self:provider.stage}.yml), file(env.yml):dev}
+
+  # Webpack Config
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+  # Split Stack Config
+  splitStacks:
+    nestedStackCount: 2
+    perFunction: false
+    perType: false
+    perGroupFunction: true
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-split-stacks
+  - serverless-webpack
+  - serverless-plugin-resource-tagging
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ${self:custom.environment.REGION}
+  stage: ${opt:stage, self:custom.defaultStage}
+  versionFunctions: false
+  timeout: 30
+  memorySize: 128
+  stackTags:
+    Project: ${self:service}-${self:provider.stage}
+  # iam:
+  #   role:
+  #     statements: ${file(serverless-files/serverless-lambda-policy-definitions.yml)}
+  environment:
+    REGION: ${self:custom.environment.REGION}
+
+functions:
+  - ${file(serverless-files/serverless-functions-definitions.yml)}

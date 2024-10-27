@@ -1,0 +1,23 @@
+getCurrentUsd:
+  handler: src/handlers/usd-handler.getCurrent
+  events:
+    - http:
+        method: get
+        path: current
+        cors: true
+
+getHistoricUsd:
+  handler: src/handlers/usd-handler.getHistoric
+  events:
+    - http:
+        method: get
+        path: historic
+        cors: true
+
+getAvergaeUsd:
+  handler: src/handlers/usd-handler.getAverage
+  events:
+    - http:
+        method: get
+        path: average
+        cors: true

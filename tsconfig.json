@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    "lib": [
+      "es2021"
+    ],
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "lib",
+    "strict": true,
+    "declaration": false,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "paths": {
+      "@entities/*": [
+        "src/common/entities/*"
+      ],
+      "@enums/*": [
+        "src/common/enums/*"
+      ],
+      "@interfaces/*": [
+        "src/common/interfaces/*"
+      ],
+      "@controllers/*": [
+        "src/controllers/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@handlers/*": [
+        "src/handlers/*"
+      ],
+      "@helpers/*": [
+        "src/helpers/*"
+      ],
+    }
+  },
+  "include": [
+    "src",
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    ".serverless",
+    ".webpack",
+    "_warmup",
+    ".vscode"
+  ],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+
+# Package directories and files
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+.webpack
+dist
+
+# Enviroment
+env.yml
+env.*.yml
+!env.example.yml
+
+# Editor directorires
+.DS_Store
+.nyc_output
+yarn-error.log
+.vscode
+
+# IntelliJ files
+.idea/*
