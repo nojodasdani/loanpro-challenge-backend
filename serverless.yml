@@ -1,4 +1,4 @@
-service: loanpro-challenge-api
+service: loanpro-challenge-backend
 configValidationMode: warn
 
 package:
@@ -7,6 +7,11 @@ package:
 custom:
   defaultStage: dev
   environment: ${file(env.${self:provider.stage}.yml), file(env.yml):dev}
+
+  # API Key
+  apiKeys:
+    - name: ${self:service}-${sls:stage}-api-key
+      value: bhbxlXGnctGfNJdyoZsu
 
   # Webpack Config
   webpack:
@@ -25,6 +30,7 @@ plugins:
   - serverless-plugin-split-stacks
   - serverless-webpack
   - serverless-plugin-resource-tagging
+  - serverless-add-api-key
 
 provider:
   name: aws
