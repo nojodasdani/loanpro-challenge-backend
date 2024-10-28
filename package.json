@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "aws-lambda": "^1.0.7",
-    "axios": "^1.7.3"
+    "axios": "^1.7.3",
+    "moment": "^2.30.1"
   },
   "devDependencies": {
     "@aws-sdk/types": "^3.460.0",

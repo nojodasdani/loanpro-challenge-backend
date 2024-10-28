@@ -18,6 +18,7 @@
     "declaration": false,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    "esModuleInterop": true,
     "paths": {
       "@entities/*": [
         "src/common/entities/*"

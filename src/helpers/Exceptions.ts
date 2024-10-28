@@ -35,4 +35,3 @@ export class BadRequestException extends BackendCustomException {
  *  Custom Server Error Exceptions (500.x)
  *
  *********************************************/
-

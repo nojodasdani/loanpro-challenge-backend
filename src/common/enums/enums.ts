@@ -7,3 +7,15 @@ export enum StatusCodes {
     FORBIDDEN = 403,
     SERVER_ERROR = 500,
 }
+
+export enum BanxicoSeries {
+    CURRENT = 'SF43718',
+    HISTORIC = 'SF63528',
+    AVERAGE = 'SF43718',
+}
+
+export enum Endpoint {
+    CURRENT = 1,
+    HISTORIC = 2,
+    AVERAGE = 3,
+}

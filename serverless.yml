@@ -41,6 +41,7 @@ provider:
   #     statements: ${file(serverless-files/serverless-lambda-policy-definitions.yml)}
   environment:
     REGION: ${self:custom.environment.REGION}
+    TOKEN: ${self:custom.environment.TOKEN}
 
 functions:
   - ${file(serverless-files/serverless-functions-definitions.yml)}
