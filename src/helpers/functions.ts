@@ -10,6 +10,7 @@ export const generateResponse = (statusCode: number, body: any, error?: Error): 
         body: JSON.stringify(body),
         headers: {
             'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*",
         },
     };
 };
